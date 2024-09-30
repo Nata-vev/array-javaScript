@@ -107,3 +107,8 @@ console.log(numsString);
 
 const nums = numsString.concat(1000, 2000, [true, false]);
 console.log(nums);
+
+
+// Створити масив з довільними елементами. За допомогою циклу вивести всі елементи масиву послідовно в консоль
+const fruits = ['avocada', 'pineapple', 'mango', 'lemon'];
+fruits.forEach((fruits) => console.log(fruits));
