@@ -21,6 +21,7 @@ console.log(numbers1);
 
 numbers1.pop();
 numbers1.pop();
+numbers1.pop();
 console.log(numbers1);
 
 // Створити масив [1, 2, 3, 4, 5]. За допомогою методу splice перетворити його на [1, 4, 5].
@@ -44,9 +45,6 @@ console.log(spliceResult);
 const numbers4 = [1, 2, 3, 4, 5];
 console.log(numbers4);
 
-// numbers4.splice(3, 2, 'a', 'b', 'c', 4, 5);    з видаленням
-// console.log(numbers4);
-
 numbers4.splice(3, 0, 'a', 'b', 'c');
 console.log(numbers4);
 
@@ -55,7 +53,9 @@ console.log(numbers4);
 const numbers5 = [1, 2, 3, 4, 5];
 console.log(numbers5);
 
-numbers5.splice(1, 4, 'a', 'b', 2, 3, 4, 'c', 5, 'e');
+numbers5.splice(1, 0, 'a', 'b');
+numbers5.splice(-1, 0, 'c');
+numbers5.splice(numbers5.length, 0, 'e');
 console.log(numbers5);
 
 // Створити масив [1, 2, 3, 4, 5]. За допомогою методу slice зробити копію масива зі значеннями [4, 5]
@@ -63,7 +63,10 @@ console.log(numbers5);
 const numbers6 = [1, 2, 3, 4, 5];
 console.log(numbers6);
 
-const copyNumbers6 = numbers6.slice(3, 5);
+// const copyNumbers6 = numbers6.slice(3, 5);
+// // const copyNumbers6 = numbers6.slice(-2, 5);
+
+const copyNumbers6 = numbers6.slice(-2);
 console.log(copyNumbers6);
 
 // Створити масив ['first', 'second', 'third', 'fourth', 'last']. Зробити копію зі значеннями  ['second', 'third'].
@@ -110,5 +113,32 @@ console.log(nums);
 
 
 // Створити масив з довільними елементами. За допомогою циклу вивести всі елементи масиву послідовно в консоль
-const fruits = ['avocada', 'pineapple', 'mango', 'lemon'];
-fruits.forEach((fruits) => console.log(fruits));
+// const fruits = ['avocada', 'pineapple', 'mango', 'lemon'];
+// fruits.forEach((fruits) => console.log(fruits));
+
+const forArr = ['first', 10, true, null, 'data'];
+for(let i = 0; i < forArr.length; i++) {
+  console.log(forArr[i]);
+}
+
+/* 
+  Створити масив з довільними елементами. 
+  За допомогою циклу вивести всі елементи масиву з парними індексами послідовно в консоль
+*/
+
+for(let i = 0; i < forArr.length; i++) {
+  if(i % 2 === 0) {
+    console.log(forArr[i]);
+  }
+}
+
+for(let i = 0; i < forArr.length; i+=2) {
+  // if(i % 2 === 0) {
+    console.log(forArr[i]);
+  // }
+}
+
+// обхід масиву по циклу від кінця до початку
+for (let i = forArr.length - 1; i >= 0; i--) {
+  console.log(forArr[i]);
+}
